@@ -3,7 +3,8 @@
 
 ## Versions
 
-- [bb1d497](): Original version
+- [Init](https://github.com/EstephaniaCalvoC/clean_code/commit/8ba53dc6787f541213c7d8629e0d725777886577)
+- [Code smell #1: imprecise types]()
 
 
 ## Resources
