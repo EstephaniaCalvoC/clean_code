@@ -6,7 +6,8 @@
 - [Init](https://github.com/EstephaniaCalvoC/clean_code/commit/8ba53dc6787f541213c7d8629e0d725777886577)
 - [Code smell #1: imprecise types](https://github.com/EstephaniaCalvoC/clean_code/commit/ee2035634349d7afb3cad99a87d857490249557a)
 - [Code smell #2: duplicate code](https://github.com/EstephaniaCalvoC/clean_code/commit/7812557669a581cf764ec2b59bbb35171615f8cf)
-- [Code smell #3: not using available built-in functions](https://github.com/EstephaniaCalvoC/clean_code/commit/2307edf164cfca133d5198aa2f65e33c96c174bc)
+- [Code smell #3: not using available built-in functions](https://github.com/EstephaniaCalvoC/clean_code/commit/a1f1c62ba07b3d966c3c5e5ab03c25eb4627a179)
+- [Code smell #4: vague identifiers](https://github.com/EstephaniaCalvoC/clean_code/commit/)
 
 ## Resources
 

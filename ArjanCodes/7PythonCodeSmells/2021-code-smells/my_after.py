@@ -55,8 +55,8 @@ class Employee:
 class HourlyEmployee(Employee):
     """Employee that's paid based on number of worked hours."""
 
-    hourly_rate: float = 50
-    amount: int = 10
+    hourly_rate_dollars: float = 50
+    hours_worked: int = 10
 
 
 @dataclass
@@ -89,7 +89,7 @@ class Company:
         elif isinstance(employee, HourlyEmployee):
             print(
                 f"Paying employee {employee.name} a hourly rate of \
-                ${employee.hourly_rate} for {employee.amount} hours."
+                ${employee.hourly_rate_dollars} for {employee.hours_worked} hours."
             )
 
 
