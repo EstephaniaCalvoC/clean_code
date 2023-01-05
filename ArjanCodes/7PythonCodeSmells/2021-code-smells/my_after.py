@@ -78,7 +78,7 @@ class Company:
 
     def find_employees(self, role: Role) -> List[Employee]:
         """Find all employees with a particular role."""
-        return [employee for employee in self.employees if employee.role == role]
+        return [employee for employee in self.employees if employee.role is role]
 
     def pay_employee(self, employee: Employee) -> None:
         """Pay an employee."""
