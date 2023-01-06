@@ -10,7 +10,8 @@
 - [Code smell #4: vague identifiers](https://github.com/EstephaniaCalvoC/clean_code/commit/42edae0f424571b7526a31d60e549ad6f7c2c3c2)
 - [Code smell #5: using isinstance to separate behavior](https://github.com/EstephaniaCalvoC/clean_code/commit/90a05ff7f33d0ab6141fdfe7747cbd80debe3ee1)
 - [Code smell #6: using boolean flags to make a method do 2 different things](https://github.com/EstephaniaCalvoC/clean_code/commit/601bec699464c2808781a5968ebf2b1afddd70da)
-- [Code smell #7: catching and then ignoring exceptions](https://github.com/EstephaniaCalvoC/clean_code/commit/)
+- [Code smell #7: catching and then ignoring exceptions](https://github.com/EstephaniaCalvoC/clean_code/commit/8865ad48a8a9b46fe6f23ce947e70180bc42fb2e)
+- [Code smell #8 (BONUS): not using custom exceptions](https://github.com/EstephaniaCalvoC/clean_code/commit/)
 
 ## Resources
 

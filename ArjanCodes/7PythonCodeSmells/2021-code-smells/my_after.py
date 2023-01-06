@@ -10,6 +10,26 @@ from enum import Enum, auto
 FIXED_VACATION_DAYS_PAYOUT = 5  # The fixed nr of vacation days that can be paid out.
 
 
+class InsuficentHolidaysToPayoutError(Exception):
+    """Custom error that is raised when the employee has not enoght holidays to payout"""
+
+    def __init__(self, requested_days: int, remaining_days: int) -> None:
+        self.requested_days = requested_days
+        self.remaining_day = remaining_days
+        self.message = f"You don't have enough holidays left over for a payout.\
+                    Remaining holidays: {remaining_days}."
+        super.__init__(self.message)
+
+
+class InsuficentHolidaysToTakeError(Exception):
+    """Custom error that is raised when the employee has not enoght holidays to take"""
+    
+    message = "You don't have any holidays left. Now back to work, you!"
+    
+    def __init__(self) -> None:
+        super.__init__(self.message)
+
+
 class Role(Enum):
     """Employee roles types"""
     PRESIDENT = auto()
@@ -32,10 +52,9 @@ class Employee(ABC):
         """Let the employee pay out 5 holidays"""
         # check that there are enough vacation days left for a payout
         if self.vacation_days < FIXED_VACATION_DAYS_PAYOUT:
-            raise ValueError(
-                f"You don't have enough holidays left over for a payout.\
-                    Remaining holidays: {self.vacation_days}."
-            )
+            raise InsuficentHolidaysToPayoutError(
+                requested_days=FIXED_VACATION_DAYS_PAYOUT,
+                remaining_days=self.vacation_days)
         
         self.vacation_days -= FIXED_VACATION_DAYS_PAYOUT
         print(f"Paying out a holiday. Holidays left: {self.vacation_days}")
@@ -44,9 +63,8 @@ class Employee(ABC):
     def take_a_holiday(self) -> None:
         """Let the employee take a single holiday"""
         if self.vacation_days < 1:
-            raise ValueError(
-                "You don't have any holidays left. Now back to work, you!"
-            )
+            raise InsuficentHolidaysToTakeError()
+        
         self.vacation_days -= 1
         print("Have fun on your holiday. Don't forget to check your emails!")
 
