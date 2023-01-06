@@ -28,28 +28,29 @@ class Employee(ABC):
     role: Role
     vacation_days: int = 25
 
-    def take_a_holiday(self, payout: bool) -> None:
-        """Let the employee take a single holiday, or pay out 5 holidays."""
-        if payout:
-            # check that there are enough vacation days left for a payout
-            if self.vacation_days < FIXED_VACATION_DAYS_PAYOUT:
-                raise ValueError(
-                    f"You don't have enough holidays left over for a payout.\
-                        Remaining holidays: {self.vacation_days}."
-                )
-            try:
-                self.vacation_days -= FIXED_VACATION_DAYS_PAYOUT
-                print(f"Paying out a holiday. Holidays left: {self.vacation_days}")
-            except Exception:
-                # this should never happen
-                pass
-        else:
-            if self.vacation_days < 1:
-                raise ValueError(
-                    "You don't have any holidays left. Now back to work, you!"
-                )
-            self.vacation_days -= 1
-            print("Have fun on your holiday. Don't forget to check your emails!")
+    def payout_holiday(self) -> None:
+        """Let the employee pay out 5 holidays"""
+        # check that there are enough vacation days left for a payout
+        if self.vacation_days < FIXED_VACATION_DAYS_PAYOUT:
+            raise ValueError(
+                f"You don't have enough holidays left over for a payout.\
+                    Remaining holidays: {self.vacation_days}."
+            )
+        try:
+            self.vacation_days -= FIXED_VACATION_DAYS_PAYOUT
+            print(f"Paying out a holiday. Holidays left: {self.vacation_days}")
+        except Exception:
+            # this should never happen
+            pass
+
+    def take_a_holiday(self) -> None:
+        """Let the employee take a single holiday"""
+        if self.vacation_days < 1:
+            raise ValueError(
+                "You don't have any holidays left. Now back to work, you!"
+            )
+        self.vacation_days -= 1
+        print("Have fun on your holiday. Don't forget to check your emails!")
 
     @abstractmethod
     def pay_employee(self)-> None:
@@ -113,7 +114,7 @@ def main() -> None:
     print(company.find_employees(Role.MANAGER))
     print(company.find_employees(Role.INTERN))
     company.employees[0].pay_employee()
-    company.employees[0].take_a_holiday(False)
+    company.employees[0].take_a_holiday()
 
 
 if __name__ == "__main__":
