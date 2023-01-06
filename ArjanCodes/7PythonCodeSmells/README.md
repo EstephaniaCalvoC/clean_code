@@ -11,7 +11,8 @@
 - [Code smell #5: using isinstance to separate behavior](https://github.com/EstephaniaCalvoC/clean_code/commit/90a05ff7f33d0ab6141fdfe7747cbd80debe3ee1)
 - [Code smell #6: using boolean flags to make a method do 2 different things](https://github.com/EstephaniaCalvoC/clean_code/commit/601bec699464c2808781a5968ebf2b1afddd70da)
 - [Code smell #7: catching and then ignoring exceptions](https://github.com/EstephaniaCalvoC/clean_code/commit/8865ad48a8a9b46fe6f23ce947e70180bc42fb2e)
-- [Code smell #8 (BONUS): not using custom exceptions](https://github.com/EstephaniaCalvoC/clean_code/commit/)
+- [Code smell #8 (BONUS): not using custom exceptions](https://github.com/EstephaniaCalvoC/clean_code/commit/73f09331cc9acc0b3c198816fb78d7227bfdb24d)
+- [My final version](https://github.com/EstephaniaCalvoC/clean_code/commit/)
 
 ## Resources
 
