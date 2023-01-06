@@ -36,12 +36,10 @@ class Employee(ABC):
                 f"You don't have enough holidays left over for a payout.\
                     Remaining holidays: {self.vacation_days}."
             )
-        try:
-            self.vacation_days -= FIXED_VACATION_DAYS_PAYOUT
-            print(f"Paying out a holiday. Holidays left: {self.vacation_days}")
-        except Exception:
-            # this should never happen
-            pass
+        
+        self.vacation_days -= FIXED_VACATION_DAYS_PAYOUT
+        print(f"Paying out a holiday. Holidays left: {self.vacation_days}")
+        
 
     def take_a_holiday(self) -> None:
         """Let the employee take a single holiday"""
