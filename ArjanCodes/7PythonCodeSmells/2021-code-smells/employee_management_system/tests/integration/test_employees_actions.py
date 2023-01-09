@@ -1,16 +1,21 @@
-from os import system
+from os import system, getenv, path
+
+
+COMPANY_NAME = "Mega SA"
+FILE_NAME = "mega_sa.csv"
 
 
 def run_command(command):
     """Run the indicated command in the system"""
-    # TODO: Save in a variable variable or create an alia
-    program_location = "/home/estephania.calvo/Desktop/ecalvo/projects/clean_code/ArjanCodes/7PythonCodeSmells/2021-code-smells/employee_management_system/cmd_app/main.py"
+    program_location = getenv("EMS_LOCATION")
     exit_code = system(f'echo "{command}\nclose" | {program_location}')
     return exit_code
 
 
-def test_create_company():
-    result = run_command("create_company Gatos")
+def test_create_company(tmp_path):
+    abs_path = tmp_path.absolute()
+    exit_code = run_command(f"create_company {COMPANY_NAME}, {abs_path}")
 
-    print(result)
-    assert True
+    assert exit_code == 0
+    assert path.exists(f"{abs_path}/{FILE_NAME}")
+

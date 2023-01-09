@@ -2,9 +2,9 @@
 """
 Very advanced Employee management system.
 """
-from company import Company
-from employee import HourlyEmployee, SalariedEmployee
-from role import Role
+# from company import Company
+# from employee import HourlyEmployee, SalariedEmployee
+# from role import Role
 
 
 import cmd, sys
@@ -14,11 +14,29 @@ class EmployeeManagementSystem(cmd.Cmd):
     intro = "Welcome to the very advance Employee management system."
     prompt = "(EMS) "
 
+    def parser(self, arg):
+        pass
+
+    def do_load(self, arg):
+        # TODO: Be able to load a csv file as db with the name of the company, every row is an employee. New actio do_load
+        pass
+
+
     # --- Company commands ---#
 
     def do_create_company(self, arg):
         """Create a company"""
-        print(f"Creating a company: {arg}")
+        # TODO: Check if already exist a file, if it does suggest use load or other location
+
+        # TODO: Pass parser to other function
+        company_name, location = arg.split(", ")
+
+        file_name = "_".join(company_name.lower().split()) + ".csv"
+        file_path = f'{location}/{file_name}'
+        with open(file_path, "w") as f:
+            pass
+
+        print(f"Success: The company {company_name} was created successfully in {location} as {file_name}")
 
     def do_close(self, arg):
         """Finish the program"""
