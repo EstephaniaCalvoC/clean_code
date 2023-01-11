@@ -61,4 +61,4 @@ def test_load_data(capsys, ems, data_file_path):
 
     assert validate_logs(out, err, [SUCCESS_RESPONSE, data_file_path, number_of_records])
     # TODO: Validate the ids as keys of the dictionary employess
-    assert len(Company.employess) == number_of_records
+    assert len(ems.company.get_employess()) == number_of_records

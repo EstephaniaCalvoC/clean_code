@@ -13,12 +13,16 @@ import cmd, sys
 class EmployeeManagementSystem(cmd.Cmd):
     intro = "Welcome to the very advance Employee management system."
     prompt = "(EMS) "
+    company = None
 
     def parser(self, arg):
         pass
 
     def do_load(self, arg):
         # TODO: Be able to load a csv file as db with the name of the company, every row is an employee. New actio do_load
+
+        # Load the employees in a given CSV file, either in DataFile or DataBase
+        # Use self.company.load(csv_file)
         pass
 
 
@@ -35,6 +39,8 @@ class EmployeeManagementSystem(cmd.Cmd):
         file_path = f'{location}/{file_name}'
         with open(file_path, "w") as f:
             pass
+
+        # TODO: Create the object company, use self.company = Company(DataManager), the DataManager depends of the Environment
 
         print(f"Success: The company {company_name} was created successfully in {location} as {file_name}")
 
